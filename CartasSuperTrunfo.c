@@ -138,16 +138,16 @@ int main() {
     // Comparação das cartas
     // ==========================
 
-    printf("\nComparando as cartas\n\n");
+    printf("\n***Comparando as cartas***\n\n");
     printf("LEMBRE-SE: PARA O ATRIBUTO DE DENSIDADE POPULACIONAL, VENCE O MENOR VALOR\n");
     printf("Saída 1: Carta 1 venceu nesse atributo. Saída 0: Carta 2 venceu nesse atributo\n\n");
     printf("População: %d\n", populacao > populacao2);
-    printf("Área: %.2f\n", area > area2);
-    printf("PIB: %2.f\n", pib > pib2);
+    printf("Área: %.0f\n", area > area2);
+    printf("PIB: %.0f\n", pib > pib2);
     printf("Pontos turísticos: %d\n", pontosturisticos > pontosturisticos2);
-    printf("Densidade populacional: %.2f\n", densidadepop < densidadepop2);
-    printf("PIB per capita: %.2f\n", pibpercapita > pibpercapita2);
-    printf("Super poder: %.2f\n", superpoder > superpoder2);
+    printf("Densidade populacional: %.0f\n", densidadepop < densidadepop2);
+    printf("PIB per capita: %.0f\n", pibpercapita > pibpercapita2);
+    printf("Super poder: %.0f\n", superpoder > superpoder2);
 
     return 0; // Fim do programa
 }
