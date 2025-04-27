@@ -14,6 +14,7 @@ int main() {
     float pib, pib2;
     float pibpercapita, pibpercapita2; 
     float densidadepop, densidadepop2; // (Densidade Populacional)
+    float superpoder, superpoder2; // (Super poder da carta)
 
 
 
@@ -83,8 +84,8 @@ int main() {
     // CALCULANDO PIB PER CAPITA
     // ==========================
 
-    pibpercapita = pib / populacao; //PIB per capita da carta 1
-    pibpercapita2 = pib2 / populacao2; //PIB per capita da carta 2
+    pibpercapita = (pib * 1000000000)  / populacao; //PIB per capita da carta 1
+    pibpercapita2 = (pib2 * 1000000000) / populacao2; //PIB per capita da carta 2
 
     // ==========================
     // CALCULANDO DENSIDADE POPULACIONAL
@@ -92,6 +93,16 @@ int main() {
 
     densidadepop = populacao / area; // Densidade populacional da carta 1
     densidadepop2 = populacao2 / area2; // Densidade populacional da carta 2
+
+
+    // ==========================
+    // CALCULANDO SUPER PODER
+    // ==========================
+
+    superpoder = populacao + area + pib + pontosturisticos + densidadepop + pibpercapita; // Super poder da carta 1
+    superpoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + densidadepop2 + pibpercapita2; // Super poder da carta 2
+
+
 
 
 
@@ -107,7 +118,7 @@ int main() {
     printf("PIB: R$ %.2f bilhões\n", pib); // Exibe o PIB formatado
     printf("Pontos turisticos: %d\n", pontosturisticos);
     printf("Densidade populacional: %.2f habitantes/km²\n", densidadepop); 
-    printf("PIB per capta: R$ %.2f\n", pibpercapita); 
+    printf("PIB per capta: R$ %.2f\n", pibpercapita);
 
     // ==========================
     // Exibição dos dados - Carta 2
@@ -122,6 +133,21 @@ int main() {
     printf("Pontos turisticos: %d\n", pontosturisticos2);
     printf("Densidade populacional: %.2f habitantes/km²\n", densidadepop2); 
     printf("PIB per capta: R$ %.2f\n", pibpercapita2); 
+
+    // ==========================
+    // Comparação das cartas
+    // ==========================
+
+    printf("\nComparando as cartas\n\n");
+    printf("LEMBRE-SE: PARA O ATRIBUTO DE DENSIDADE POPULACIONAL, VENCE O MENOR VALOR\n");
+    printf("Saída 1: Carta 1 venceu nesse atributo. Saída 0: Carta 2 venceu nesse atributo\n\n");
+    printf("População: %d\n", populacao > populacao2);
+    printf("Área: %.2f\n", area > area2);
+    printf("PIB: %2.f\n", pib > pib2);
+    printf("Pontos turísticos: %d\n", pontosturisticos > pontosturisticos2);
+    printf("Densidade populacional: %.2f\n", densidadepop < densidadepop2);
+    printf("PIB per capita: %.2f\n", pibpercapita > pibpercapita2);
+    printf("Super poder: %.2f\n", superpoder > superpoder2);
 
     return 0; // Fim do programa
 }
